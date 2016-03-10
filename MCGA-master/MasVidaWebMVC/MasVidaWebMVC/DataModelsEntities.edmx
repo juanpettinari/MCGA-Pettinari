@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MasVidaWebMVC.DataModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="Audits">
+          <Key>
+            <PropertyRef Name="AuditID" />
+          </Key>
+          <Property Name="AuditID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AuditDescription" Type="varchar" MaxLength="250" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="AuditDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FamiliesGroups">
+          <Key>
+            <PropertyRef Name="FamilyGroupID" />
+          </Key>
+          <Property Name="FamilyGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FamilyName" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Parameters">
+          <Key>
+            <PropertyRef Name="ParameterID" />
+          </Key>
+          <Property Name="ParameterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParameterName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParameterValue" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParameterDescription" Type="varbinary" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ProductDescription" Type="text" />
+          <Property Name="ProductPrice" Type="float" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Resources">
+          <Key>
+            <PropertyRef Name="ControllerID" />
+          </Key>
+          <Property Name="ControllerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ControllerName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Transactions">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ProductPrice" Type="float" Nullable="false" />
+          <Property Name="TransactionCreationDate" Type="datetime" Nullable="false" />
+          <Property Name="TransactionPaymentDate" Type="datetime" />
+          <Property Name="IsPaid" Type="bit" Nullable="false" />
+          <Property Name="TransactionTypeID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TransactionsTypes">
+          <Key>
+            <PropertyRef Name="TransactionTypeID" />
+          </Key>
+          <Property Name="TransactionTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TransactionTypeDescription" Type="text" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DNI" Type="varchar" MaxLength="8" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Phone" Type="varchar" MaxLength="25" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="150" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="UserTypeID" Type="int" Nullable="false" />
+          <Property Name="FamilyGroupID" Type="int" />
+          <Property Name="CreationDateTime" Type="datetime" />
+          <Property Name="LastTransactionID" Type="int" />
+          <Property Name="AccountTotal" Type="float" />
+        </EntityType>
+        <EntityType Name="UsersTypes">
+          <Key>
+            <PropertyRef Name="UserTypeID" />
+          </Key>
+          <Property Name="UserTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="UserTypes_Resources">
+          <Key>
+            <PropertyRef Name="UserTypeID" />
+            <PropertyRef Name="ControllerID" />
+          </Key>
+          <Property Name="UserTypeID" Type="int" Nullable="false" />
+          <Property Name="ControllerID" Type="int" Nullable="false" />
+          <Property Name="Permit" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Audits_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Audits" Type="Self.Audits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Audits">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_TransactionsTypes">
+          <End Role="TransactionsTypes" Type="Self.TransactionsTypes" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionsTypes">
+              <PropertyRef Name="TransactionTypeID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="TransactionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UsersTypes">
+          <End Role="UsersTypes" Type="Self.UsersTypes" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersTypes">
+              <PropertyRef Name="UserTypeID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="UserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTypes_Controllers_Controller">
+          <End Role="Resources" Type="Self.Resources" Multiplicity="1" />
+          <End Role="UserTypes_Resources" Type="Self.UserTypes_Resources" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resources">
+              <PropertyRef Name="ControllerID" />
+            </Principal>
+            <Dependent Role="UserTypes_Resources">
+              <PropertyRef Name="ControllerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTypes_Controllers_UsersTypes">
+          <End Role="UsersTypes" Type="Self.UsersTypes" Multiplicity="1" />
+          <End Role="UserTypes_Resources" Type="Self.UserTypes_Resources" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersTypes">
+              <PropertyRef Name="UserTypeID" />
+            </Principal>
+            <Dependent Role="UserTypes_Resources">
+              <PropertyRef Name="UserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MasVidaWebMVCDataModelsStoreContainer">
+          <EntitySet Name="Audits" EntityType="Self.Audits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FamiliesGroups" EntityType="Self.FamiliesGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parameters" EntityType="Self.Parameters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Resources" EntityType="Self.Resources" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransactionsTypes" EntityType="Self.TransactionsTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersTypes" EntityType="Self.UsersTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTypes_Resources" EntityType="Self.UserTypes_Resources" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Audits_Users" Association="Self.FK_Audits_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Audits" EntitySet="Audits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_Products" Association="Self.FK_Transactions_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_TransactionsTypes" Association="Self.FK_Transactions_TransactionsTypes">
+            <End Role="TransactionsTypes" EntitySet="TransactionsTypes" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_Users" Association="Self.FK_Transactions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UsersTypes" Association="Self.FK_Users_UsersTypes">
+            <End Role="UsersTypes" EntitySet="UsersTypes" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTypes_Controllers_Controller" Association="Self.FK_UserTypes_Controllers_Controller">
+            <End Role="Resources" EntitySet="Resources" />
+            <End Role="UserTypes_Resources" EntitySet="UserTypes_Resources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTypes_Controllers_UsersTypes" Association="Self.FK_UserTypes_Controllers_UsersTypes">
+            <End Role="UsersTypes" EntitySet="UsersTypes" />
+            <End Role="UserTypes_Resources" EntitySet="UserTypes_Resources" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MasVidaWebMVC.DataModels" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MasVidaDataContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FamiliesGroups" EntityType="MasVidaWebMVC.DataModels.FamilyGroup" />
+          <EntitySet Name="Parameters" EntityType="MasVidaWebMVC.DataModels.Parameter" />
+          <EntitySet Name="Products" EntityType="MasVidaWebMVC.DataModels.Product" />
+          <EntitySet Name="Transactions" EntityType="MasVidaWebMVC.DataModels.Transaction" />
+          <EntitySet Name="TransactionsTypes" EntityType="MasVidaWebMVC.DataModels.TransactionType" />
+          <EntitySet Name="Users" EntityType="MasVidaWebMVC.DataModels.User" />
+          <EntitySet Name="UsersTypes" EntityType="MasVidaWebMVC.DataModels.UserType" />
+          <AssociationSet Name="FK_Users_FamiliesGroups" Association="MasVidaWebMVC.DataModels.FK_Users_FamiliesGroups">
+            <End Role="FamiliesGroups" EntitySet="FamiliesGroups" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_Products" Association="MasVidaWebMVC.DataModels.FK_Transactions_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Products" Association="MasVidaWebMVC.DataModels.FK_Users_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_TransactionsTypes" Association="MasVidaWebMVC.DataModels.FK_Transactions_TransactionsTypes">
+            <End Role="TransactionsTypes" EntitySet="TransactionsTypes" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UsersTypes" Association="MasVidaWebMVC.DataModels.FK_Users_UsersTypes">
+            <End Role="UsersTypes" EntitySet="UsersTypes" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_Users" Association="MasVidaWebMVC.DataModels.FK_Transactions_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+          <EntitySet Name="Audits" EntityType="MasVidaWebMVC.DataModels.Audit" />
+          <AssociationSet Name="FK_Audits_Users" Association="MasVidaWebMVC.DataModels.FK_Audits_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Audit" EntitySet="Audits" />
+          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="MasVidaWebMVC.DataModels.sysdiagram" />
+          <EntitySet Name="Resources" EntityType="MasVidaWebMVC.DataModels.Resource" />
+          <EntitySet Name="UserTypes_Resources" EntityType="MasVidaWebMVC.DataModels.UserTypes_Resources" />
+          <AssociationSet Name="FK_UserTypes_Controllers_Controller" Association="MasVidaWebMVC.DataModels.FK_UserTypes_Controllers_Controller">
+            <End Role="Resource" EntitySet="Resources" />
+            <End Role="UserTypes_Resources" EntitySet="UserTypes_Resources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTypes_Controllers_UsersTypes" Association="MasVidaWebMVC.DataModels.FK_UserTypes_Controllers_UsersTypes">
+            <End Role="UserType" EntitySet="UsersTypes" />
+            <End Role="UserTypes_Resources" EntitySet="UserTypes_Resources" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="FamilyGroup">
+          <Key>
+            <PropertyRef Name="FamilyGroupID" />
+          </Key>
+          <Property Name="FamilyGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FamilyName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Users" Relationship="MasVidaWebMVC.DataModels.FK_Users_FamiliesGroups" FromRole="FamiliesGroups" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Parameter">
+          <Key>
+            <PropertyRef Name="ParameterID" />
+          </Key>
+          <Property Name="ParameterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParameterName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ParameterValue" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ParameterDescription" Type="Binary" MaxLength="250" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ProductDescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ProductPrice" Type="Double" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Transactions" Relationship="MasVidaWebMVC.DataModels.FK_Transactions_Products" FromRole="Products" ToRole="Transactions" />
+          <NavigationProperty Name="Users" Relationship="MasVidaWebMVC.DataModels.FK_Users_Products" FromRole="Products" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ProductPrice" Type="Double" Nullable="false" />
+          <Property Name="TransactionCreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TransactionPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+          <Property Name="TransactionTypeID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="MasVidaWebMVC.DataModels.FK_Transactions_Products" FromRole="Transactions" ToRole="Products" />
+          <NavigationProperty Name="TransactionType" Relationship="MasVidaWebMVC.DataModels.FK_Transactions_TransactionsTypes" FromRole="Transactions" ToRole="TransactionsTypes" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="MasVidaWebMVC.DataModels.FK_Transactions_Users" FromRole="Transaction" ToRole="User" />
+        </EntityType>
+        <EntityType Name="TransactionType">
+          <Key>
+            <PropertyRef Name="TransactionTypeID" />
+          </Key>
+          <Property Name="TransactionTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TransactionTypeDescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Transactions" Relationship="MasVidaWebMVC.DataModels.FK_Transactions_TransactionsTypes" FromRole="TransactionsTypes" ToRole="Transactions" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DNI" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="UserTypeID" Type="Int32" Nullable="false" />
+          <Property Name="FamilyGroupID" Type="Int32" />
+          <Property Name="CreationDateTime" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="FamiliesGroup" Relationship="MasVidaWebMVC.DataModels.FK_Users_FamiliesGroups" FromRole="Users" ToRole="FamiliesGroups" />
+          <NavigationProperty Name="Product" Relationship="MasVidaWebMVC.DataModels.FK_Users_Products" FromRole="Users" ToRole="Products" />
+          <NavigationProperty Name="UserType" Relationship="MasVidaWebMVC.DataModels.FK_Users_UsersTypes" FromRole="Users" ToRole="UsersTypes" />
+          <Property Type="Int32" Name="LastTransactionID" />
+          <Property Type="Double" Name="AccountTotal" />
+          <NavigationProperty Name="Transactions" Relationship="MasVidaWebMVC.DataModels.FK_Transactions_Users" FromRole="User" ToRole="Transaction" />
+          <NavigationProperty Name="Audits" Relationship="MasVidaWebMVC.DataModels.FK_Audits_Users" FromRole="User" ToRole="Audit" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="UserTypeID" />
+          </Key>
+          <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Users" Relationship="MasVidaWebMVC.DataModels.FK_Users_UsersTypes" FromRole="UsersTypes" ToRole="Users" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserTypes_Resources" Relationship="MasVidaWebMVC.DataModels.FK_UserTypes_Controllers_UsersTypes" FromRole="UserType" ToRole="UserTypes_Resources" />
+        </EntityType>
+        <Association Name="FK_Users_FamiliesGroups">
+          <End Role="FamiliesGroups" Type="MasVidaWebMVC.DataModels.FamilyGroup" Multiplicity="0..1" />
+          <End Role="Users" Type="MasVidaWebMVC.DataModels.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FamiliesGroups">
+              <PropertyRef Name="FamilyGroupID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="FamilyGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Products">
+          <End Role="Products" Type="MasVidaWebMVC.DataModels.Product" Multiplicity="1" />
+          <End Role="Transactions" Type="MasVidaWebMVC.DataModels.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Products">
+          <End Role="Products" Type="MasVidaWebMVC.DataModels.Product" Multiplicity="0..1" />
+          <End Role="Users" Type="MasVidaWebMVC.DataModels.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_TransactionsTypes">
+          <End Role="TransactionsTypes" Type="MasVidaWebMVC.DataModels.TransactionType" Multiplicity="1" />
+          <End Role="Transactions" Type="MasVidaWebMVC.DataModels.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionsTypes">
+              <PropertyRef Name="TransactionTypeID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="TransactionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UsersTypes">
+          <End Role="UsersTypes" Type="MasVidaWebMVC.DataModels.UserType" Multiplicity="1" />
+          <End Role="Users" Type="MasVidaWebMVC.DataModels.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersTypes">
+              <PropertyRef Name="UserTypeID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="UserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Users">
+          <End Type="MasVidaWebMVC.DataModels.User" Role="User" Multiplicity="1" />
+          <End Type="MasVidaWebMVC.DataModels.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Audit">
+          <Key>
+            <PropertyRef Name="AuditID" />
+          </Key>
+          <Property Type="Int32" Name="AuditID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AuditDescription" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="UserID" />
+          <Property Type="DateTime" Name="AuditDateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="MasVidaWebMVC.DataModels.FK_Audits_Users" FromRole="Audit" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Audits_Users">
+          <End Type="MasVidaWebMVC.DataModels.User" Role="User" Multiplicity="0..1" />
+          <End Type="MasVidaWebMVC.DataModels.Audit" Role="Audit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Audit">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="ControllerID" />
+          </Key>
+          <Property Name="ControllerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ControllerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserTypes_Resources" Relationship="MasVidaWebMVC.DataModels.FK_UserTypes_Controllers_Controller" FromRole="Resource" ToRole="UserTypes_Resources" />
+        </EntityType>
+        <EntityType Name="UserTypes_Resources">
+          <Key>
+            <PropertyRef Name="UserTypeID" />
+            <PropertyRef Name="ControllerID" />
+          </Key>
+          <Property Name="UserTypeID" Type="Int32" Nullable="false" />
+          <Property Name="ControllerID" Type="Int32" Nullable="false" />
+          <Property Name="Permit" Type="Boolean" />
+          <NavigationProperty Name="Resource" Relationship="MasVidaWebMVC.DataModels.FK_UserTypes_Controllers_Controller" FromRole="UserTypes_Resources" ToRole="Resource" />
+          <NavigationProperty Name="UsersType" Relationship="MasVidaWebMVC.DataModels.FK_UserTypes_Controllers_UsersTypes" FromRole="UserTypes_Resources" ToRole="UserType" />
+        </EntityType>
+        <Association Name="FK_UserTypes_Controllers_Controller">
+          <End Type="MasVidaWebMVC.DataModels.Resource" Role="Resource" Multiplicity="1" />
+          <End Type="MasVidaWebMVC.DataModels.UserTypes_Resources" Role="UserTypes_Resources" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="ControllerID" />
+            </Principal>
+            <Dependent Role="UserTypes_Resources">
+              <PropertyRef Name="ControllerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTypes_Controllers_UsersTypes">
+          <End Type="MasVidaWebMVC.DataModels.UserType" Role="UserType" Multiplicity="1" />
+          <End Type="MasVidaWebMVC.DataModels.UserTypes_Resources" Role="UserTypes_Resources" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="UserTypeID" />
+            </Principal>
+            <Dependent Role="UserTypes_Resources">
+              <PropertyRef Name="UserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MasVidaWebMVCDataModelsStoreContainer" CdmEntityContainer="MasVidaDataContext">
+          <EntitySetMapping Name="FamiliesGroups">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.FamilyGroup">
+              <MappingFragment StoreEntitySet="FamiliesGroups">
+                <ScalarProperty Name="FamilyGroupID" ColumnName="FamilyGroupID" />
+                <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parameters">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.Parameter">
+              <MappingFragment StoreEntitySet="Parameters">
+                <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+                <ScalarProperty Name="ParameterName" ColumnName="ParameterName" />
+                <ScalarProperty Name="ParameterValue" ColumnName="ParameterValue" />
+                <ScalarProperty Name="ParameterDescription" ColumnName="ParameterDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.Transaction">
+              <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="TransactionCreationDate" ColumnName="TransactionCreationDate" />
+                <ScalarProperty Name="TransactionPaymentDate" ColumnName="TransactionPaymentDate" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+                <ScalarProperty Name="TransactionTypeID" ColumnName="TransactionTypeID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionsTypes">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.TransactionType">
+              <MappingFragment StoreEntitySet="TransactionsTypes">
+                <ScalarProperty Name="TransactionTypeID" ColumnName="TransactionTypeID" />
+                <ScalarProperty Name="TransactionTypeName" ColumnName="TransactionTypeName" />
+                <ScalarProperty Name="TransactionTypeDescription" ColumnName="TransactionTypeDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="AccountTotal" ColumnName="AccountTotal" />
+                <ScalarProperty Name="LastTransactionID" ColumnName="LastTransactionID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+                <ScalarProperty Name="FamilyGroupID" ColumnName="FamilyGroupID" />
+                <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersTypes">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.UserType">
+              <MappingFragment StoreEntitySet="UsersTypes">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+                <ScalarProperty Name="UserTypeName" ColumnName="UserTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Audits">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.Audit">
+              <MappingFragment StoreEntitySet="Audits">
+                <ScalarProperty Name="AuditDateTime" ColumnName="AuditDateTime" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AuditDescription" ColumnName="AuditDescription" />
+                <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resources">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.Resource">
+              <MappingFragment StoreEntitySet="Resources">
+                <ScalarProperty Name="ControllerName" ColumnName="ControllerName" />
+                <ScalarProperty Name="ControllerID" ColumnName="ControllerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes_Resources">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.UserTypes_Resources">
+              <MappingFragment StoreEntitySet="UserTypes_Resources">
+                <ScalarProperty Name="Permit" ColumnName="Permit" />
+                <ScalarProperty Name="ControllerID" ColumnName="ControllerID" />
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

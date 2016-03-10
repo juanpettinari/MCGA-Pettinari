@@ -1,0 +1,52 @@
+﻿@*@model MasVidaWebMVC.UserTypes_Resources
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>UserTypes_Resources</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserTypeID, "UsersType")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserTypeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserTypeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ControllerID, "Resource")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ControllerID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ControllerID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Permit)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Permit)
+            @Html.ValidationMessageFor(model => model.Permit)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

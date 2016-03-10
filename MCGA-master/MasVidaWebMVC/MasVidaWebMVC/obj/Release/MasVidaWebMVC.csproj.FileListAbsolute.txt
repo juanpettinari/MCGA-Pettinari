@@ -1,0 +1,181 @@
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\MasVidaWebMVC.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\MasVidaWebMVC.pdb
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Antlr3.Runtime.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DataAnnotationsExtensions.ClientValidation.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DataAnnotationsExtensions.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.Core.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\EntityFramework.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Newtonsoft.Json.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.WebRequest.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Helpers.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Mvc.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Optimization.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Razor.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebActivator.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebGrease.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.Data.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.WebData.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Helpers.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Mvc.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Razor.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\EntityFramework.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Newtonsoft.Json.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.WebRequest.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.Data.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.WebData.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.Core.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\obj\Release\MasVidaWebMVC.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\obj\Release\MasVidaWebMVC.pdb
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.WebHost.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.WebHost.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\obj\Release\MasVidaWebMVC.csprojResolveAssemblyReference.cache
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.xml
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.Formatting.dll
+C:\Users\martinaybar\Documents\GitHub\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.Formatting.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\MasVidaWebMVC.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\MasVidaWebMVC.pdb
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Antlr3.Runtime.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DataAnnotationsExtensions.ClientValidation.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DataAnnotationsExtensions.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.AspNet.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.Core.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\EntityFramework.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Newtonsoft.Json.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.Formatting.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.WebRequest.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Helpers.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.WebHost.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Mvc.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Optimization.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Razor.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Razor.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebActivator.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebGrease.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.Data.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.WebData.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Helpers.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Mvc.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Razor.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Razor.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\EntityFramework.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Newtonsoft.Json.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.Formatting.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.WebRequest.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.WebHost.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.Data.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.WebData.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.AspNet.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.Core.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\obj\Release\MasVidaWebMVC.csprojResolveAssemblyReference.cache
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\obj\Release\MasVidaWebMVC.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\obj\Release\MasVidaWebMVC.pdb
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\PagedList.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\PagedList.Mvc.dll
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\PagedList.xml
+C:\Projects\masvida\MasVidaWebMVC\MasVidaWebMVC\bin\PagedList.Mvc.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\MasVidaWebMVC.dll.config
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\MasVidaWebMVC.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\MasVidaWebMVC.pdb
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\Antlr3.Runtime.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DataAnnotationsExtensions.ClientValidation.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DataAnnotationsExtensions.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.AspNet.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.Core.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\EntityFramework.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\Newtonsoft.Json.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\PagedList.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\PagedList.Mvc.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.Formatting.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.WebRequest.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Helpers.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.WebHost.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Mvc.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Optimization.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Razor.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Razor.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\WebActivator.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\WebGrease.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.Data.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.WebData.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\Org.Mentalis.Security.Cryptography.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\Mono.Math.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\PagedList.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\PagedList.Mvc.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Helpers.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Mvc.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Razor.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.WebPages.Razor.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\EntityFramework.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\Newtonsoft.Json.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.Formatting.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Net.Http.WebRequest.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\System.Web.Http.WebHost.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.Data.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\WebMatrix.WebData.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.AspNet.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.Core.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OAuth.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\Org.Mentalis.Security.Cryptography.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\bin\Mono.Math.xml
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\obj\Release\MasVidaWebMVC.csprojResolveAssemblyReference.cache
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\obj\Release\MasVidaWebMVC.dll
+D:\Juani\Drive\UAI\UAI 2015\2Q\MCGA\MCGA-master\MCGA-master\MasVidaWebMVC\MasVidaWebMVC\obj\Release\MasVidaWebMVC.pdb

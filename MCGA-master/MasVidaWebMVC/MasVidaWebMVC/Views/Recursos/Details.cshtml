@@ -1,0 +1,29 @@
+﻿@model MasVidaWebMVC.Resource
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Resource</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ControllerID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ControllerID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ControllerName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ControllerName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ControllerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

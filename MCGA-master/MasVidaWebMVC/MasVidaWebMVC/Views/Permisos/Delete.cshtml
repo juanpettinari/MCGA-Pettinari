@@ -1,0 +1,40 @@
+﻿@*@model MasVidaWebMVC.UserTypes_Resources
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>UserTypes_Resources</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UsersType.UserTypeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UsersType.UserTypeName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Resource.ControllerName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Resource.ControllerName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Permit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Permit)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}*@

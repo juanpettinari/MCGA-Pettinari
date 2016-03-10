@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MasVidaWebMVC.UserTypes_Resources>
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.UsersType.UserTypeName)*@
+            Tipo de Usuario
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Resource.ControllerName)*@
+            Recurso
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Permit)*@
+            Permiso
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsersType.UserTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resource.ControllerName)
+        </td>
+        <td>
+            @Html.CheckBoxFor(modelItem => item.Permit, new {disabled = "disabled" })
+        </td>
+        <td>
+            @Html.ActionLink("Cambiar Permiso", "CambiarPermiso", new {UTID = item.UserTypeID, RID = item.ControllerID},new { @class= "btn btn-default" })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MasVidaWebMVC.DataModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Audits">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AuditDescription" Type="varchar" MaxLength="250" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AuditDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FamiliesGroups">
+    <Key>
+      <PropertyRef Name="FamilyGroupID" />
+    </Key>
+    <Property Name="FamilyGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FamilyName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Parameters">
+    <Key>
+      <PropertyRef Name="ParameterID" />
+    </Key>
+    <Property Name="ParameterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParameterName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParameterValue" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParameterDescription" Type="varbinary" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProductDescription" Type="text" />
+    <Property Name="ProductPrice" Type="float" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Resources">
+    <Key>
+      <PropertyRef Name="ControllerID" />
+    </Key>
+    <Property Name="ControllerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ControllerName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProductPrice" Type="float" Nullable="false" />
+    <Property Name="TransactionCreationDate" Type="datetime" Nullable="false" />
+    <Property Name="TransactionPaymentDate" Type="datetime" />
+    <Property Name="IsPaid" Type="bit" Nullable="false" />
+    <Property Name="TransactionTypeID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransactionsTypes">
+    <Key>
+      <PropertyRef Name="TransactionTypeID" />
+    </Key>
+    <Property Name="TransactionTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TransactionTypeDescription" Type="text" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DNI" Type="varchar" MaxLength="8" />
+    <Property Name="Address" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Phone" Type="varchar" MaxLength="25" />
+    <Property Name="Birthday" Type="date" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="UserPassword" Type="varchar" MaxLength="150" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="UserTypeID" Type="int" Nullable="false" />
+    <Property Name="FamilyGroupID" Type="int" />
+    <Property Name="CreationDateTime" Type="datetime" />
+    <Property Name="LastTransactionID" Type="int" />
+    <Property Name="AccountTotal" Type="float" />
+  </EntityType>
+  <EntityType Name="UsersTypes">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="UserTypes_Resources">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+      <PropertyRef Name="ControllerID" />
+    </Key>
+    <Property Name="UserTypeID" Type="int" Nullable="false" />
+    <Property Name="ControllerID" Type="int" Nullable="false" />
+    <Property Name="Permit" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Audits_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Audits" Type="Self.Audits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Audits">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transactions_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transactions_TransactionsTypes">
+    <End Role="TransactionsTypes" Type="Self.TransactionsTypes" Multiplicity="1" />
+    <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransactionsTypes">
+        <PropertyRef Name="TransactionTypeID" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="TransactionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transactions_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_UsersTypes">
+    <End Role="UsersTypes" Type="Self.UsersTypes" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersTypes">
+        <PropertyRef Name="UserTypeID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="UserTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTypes_Controllers_Controller">
+    <End Role="Resources" Type="Self.Resources" Multiplicity="1" />
+    <End Role="UserTypes_Resources" Type="Self.UserTypes_Resources" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resources">
+        <PropertyRef Name="ControllerID" />
+      </Principal>
+      <Dependent Role="UserTypes_Resources">
+        <PropertyRef Name="ControllerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTypes_Controllers_UsersTypes">
+    <End Role="UsersTypes" Type="Self.UsersTypes" Multiplicity="1" />
+    <End Role="UserTypes_Resources" Type="Self.UserTypes_Resources" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersTypes">
+        <PropertyRef Name="UserTypeID" />
+      </Principal>
+      <Dependent Role="UserTypes_Resources">
+        <PropertyRef Name="UserTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MasVidaWebMVCDataModelsStoreContainer">
+    <EntitySet Name="Audits" EntityType="Self.Audits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FamiliesGroups" EntityType="Self.FamiliesGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parameters" EntityType="Self.Parameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resources" EntityType="Self.Resources" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransactionsTypes" EntityType="Self.TransactionsTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersTypes" EntityType="Self.UsersTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTypes_Resources" EntityType="Self.UserTypes_Resources" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Audits_Users" Association="Self.FK_Audits_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Audits" EntitySet="Audits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transactions_Products" Association="Self.FK_Transactions_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transactions_TransactionsTypes" Association="Self.FK_Transactions_TransactionsTypes">
+      <End Role="TransactionsTypes" EntitySet="TransactionsTypes" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transactions_Users" Association="Self.FK_Transactions_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_UsersTypes" Association="Self.FK_Users_UsersTypes">
+      <End Role="UsersTypes" EntitySet="UsersTypes" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTypes_Controllers_Controller" Association="Self.FK_UserTypes_Controllers_Controller">
+      <End Role="Resources" EntitySet="Resources" />
+      <End Role="UserTypes_Resources" EntitySet="UserTypes_Resources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTypes_Controllers_UsersTypes" Association="Self.FK_UserTypes_Controllers_UsersTypes">
+      <End Role="UsersTypes" EntitySet="UsersTypes" />
+      <End Role="UserTypes_Resources" EntitySet="UserTypes_Resources" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

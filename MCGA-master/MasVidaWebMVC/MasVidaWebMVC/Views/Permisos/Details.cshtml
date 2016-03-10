@@ -1,0 +1,36 @@
+﻿@*@model MasVidaWebMVC.UserTypes_Resources
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UserTypes_Resources</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UsersType.UserTypeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UsersType.UserTypeName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Resource.ControllerName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Resource.ControllerName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Permit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Permit)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
