@@ -2,11 +2,9 @@
 using MasVidaWebMVC.Filters;
 using PagedList;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 
@@ -34,9 +32,12 @@ namespace MasVidaWebMVC.Controllers
             }
 
             ViewBag.CurrentFilter = searchString;
+            int uti = (from ut in db.UsersTypes
+                               where ut.UserTypeName == "Cliente"
+                               select ut.UserTypeID).SingleOrDefault();
 
             var users = from u in db.Users.Include(u => u.FamiliesGroup).Include(u => u.Product).Include(u => u.UserType)
-                                    .Where(u => u.UserTypeID == (int)AppConstants.UserType.CLIENT)
+                                    .Where(u => u.UserTypeID == uti)
                         select u;
 
             if (!String.IsNullOrEmpty(searchString))
@@ -85,7 +86,10 @@ namespace MasVidaWebMVC.Controllers
         [HttpPost]
         public ActionResult Create(User user)
         {
-            user.UserTypeID = (int)AppConstants.UserType.CLIENT;
+            user.UserTypeID = (from ut in db.UsersTypes
+                               where ut.UserTypeName == "Cliente"
+                               select ut.UserTypeID).SingleOrDefault();
+            //user.UserTypeID = (int)AppConstants.UserType.CLIENT;
             user.CreationDateTime = DateTime.Now;
             user.AccountTotal = 0;
 
@@ -106,8 +110,9 @@ namespace MasVidaWebMVC.Controllers
             return View(user);
         }
 
-        //
-        // GET: /Clientes/Edit/5
+
+        //GET: /Clientes/Edit/5
+
         [ResourceAuthorize]
         public ActionResult Edit(int id = 0)
         {
@@ -122,8 +127,8 @@ namespace MasVidaWebMVC.Controllers
             return View(user);
         }
 
-        //
-        // POST: /Clientes/Edit/5
+
+        //POST: /Clientes/Edit/5
         [ResourceAuthorize]
         [HttpPost]
         public ActionResult Edit(User user)

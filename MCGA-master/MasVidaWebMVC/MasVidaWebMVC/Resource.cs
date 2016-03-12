@@ -13,7 +13,9 @@ namespace MasVidaWebMVC
 {
 
 using System;
+    using System.ComponentModel.DataAnnotations;
     using System.Collections.Generic;
+
     
 public partial class Resource
 {
@@ -27,7 +29,7 @@ public partial class Resource
 
 
     public int ControllerID { get; set; }
-
+        [Required]
     public string ControllerName { get; set; }
 
 

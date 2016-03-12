@@ -11,11 +11,9 @@
 
 namespace MasVidaWebMVC
 {
-
-using System;
     using System.Collections.Generic;
-    
-public partial class FamilyGroup
+    using System.ComponentModel.DataAnnotations;
+    public partial class FamilyGroup
 {
 
     public FamilyGroup()
@@ -27,7 +25,7 @@ public partial class FamilyGroup
 
 
     public int FamilyGroupID { get; set; }
-
+        [Required]
     public string FamilyName { get; set; }
 
 

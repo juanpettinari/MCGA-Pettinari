@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.TransactionTypeName)
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.TransactionTypeDescription)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TransactionTypeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TransactionTypeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TransactionTypeID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.TransactionTypeID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Details", "Details", new { id=item.TransactionTypeID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.TransactionTypeID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

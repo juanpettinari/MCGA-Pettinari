@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table class="table table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.UserTypeName)
@@ -23,11 +23,12 @@
             @Html.DisplayFor(modelItem => item.UserTypeName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserTypeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserTypeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserTypeID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.UserTypeID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Details", "Details", new { id=item.UserTypeID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserTypeID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }
 
 </table>
+

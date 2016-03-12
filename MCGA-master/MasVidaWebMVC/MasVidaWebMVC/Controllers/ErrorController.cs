@@ -1,5 +1,4 @@
-﻿using MasVidaWebMVC.Filters;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace MasVidaWebMVC.Controllers
 {
@@ -7,7 +6,6 @@ namespace MasVidaWebMVC.Controllers
     {
         //
         // GET: /Error/
-        [ResourceAuthorize]
         public ActionResult Unauthorized()
         {
             return View();

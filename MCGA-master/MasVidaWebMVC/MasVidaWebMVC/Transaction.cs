@@ -11,11 +11,11 @@
 
 namespace MasVidaWebMVC
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
 
-using System;
-    using System.Collections.Generic;
-    
-public partial class Transaction
+
+    public partial class Transaction
 {
 
     public int TransactionID { get; set; }
@@ -27,13 +27,13 @@ public partial class Transaction
     public System.DateTime TransactionCreationDate { get; set; }
 
     public Nullable<System.DateTime> TransactionPaymentDate { get; set; }
-
+        [Required]
     public bool IsPaid { get; set; }
 
     public int TransactionTypeID { get; set; }
 
     public int ProductID { get; set; }
-
+        
     public int UserID { get; set; }
 
 

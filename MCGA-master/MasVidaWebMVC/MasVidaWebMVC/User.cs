@@ -33,17 +33,16 @@ namespace MasVidaWebMVC
     public string Name { get; set; }
         [Required]
     public string LastName { get; set; }
-
+        [Range(0,99999999,ErrorMessage ="Ingrese un DNI válido.")]
     public string DNI { get; set; }
 
     public string Address { get; set; }
-
+        [DataType(DataType.EmailAddress)]
     public string Email { get; set; }
-
+        [DataType(DataType.PhoneNumber)]
     public string Phone { get; set; }
-
+        [DataType(DataType.Date)]
     public Nullable<System.DateTime> Birthday { get; set; }
-        
     public string UserName { get; set; }
         [DataType(DataType.Password)]
     public string UserPassword { get; set; }
@@ -59,7 +58,7 @@ namespace MasVidaWebMVC
     public Nullable<System.DateTime> CreationDateTime { get; set; }
 
     public Nullable<int> LastTransactionID { get; set; }
-
+        [DataType(DataType.Currency)]
     public Nullable<double> AccountTotal { get; set; }
 
 

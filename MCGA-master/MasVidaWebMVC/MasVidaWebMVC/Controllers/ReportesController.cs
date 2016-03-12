@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MasVidaWebMVC.Common;
+using MasVidaWebMVC.Filters;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using MasVidaWebMVC.Common;
-using MasVidaWebMVC.Filters;
 
 namespace MasVidaWebMVC.Controllers
 {

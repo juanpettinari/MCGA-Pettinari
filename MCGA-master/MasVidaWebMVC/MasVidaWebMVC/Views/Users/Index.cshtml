@@ -53,10 +53,11 @@
             @Html.DisplayFor(modelItem => item.UserType.UserTypeName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.UserID }) |
-            @Html.ActionLink("Cambiar Password", "CambiarPassword", new { id = item.UserID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Details", "Details", new { id=item.UserID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Cambiar Password", "CambiarPassword", new { id = item.UserID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.UserID }, new { @class = "btn btn-danger" }) 
+            
         </td>
     </tr>
 }

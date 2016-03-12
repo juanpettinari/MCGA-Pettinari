@@ -14,8 +14,9 @@ namespace MasVidaWebMVC
 
 using System;
     using System.Collections.Generic;
-    
-public partial class Product
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Product
 {
 
     public Product()
@@ -29,13 +30,13 @@ public partial class Product
 
 
     public int ProductID { get; set; }
-
+        [Required]
     public string ProductName { get; set; }
 
     public string ProductDescription { get; set; }
-
+        [Required]
     public double ProductPrice { get; set; }
-
+        [Required]
     public bool IsActive { get; set; }
 
 

@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table class="table table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ControllerID)
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.ControllerName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ControllerID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ControllerID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ControllerID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ControllerID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Details", "Details", new { id = item.ControllerID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.ControllerID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

@@ -31,7 +31,7 @@ public partial class UserType
 
 
     public int UserTypeID { get; set; }
-
+        [Required]
     public string UserTypeName { get; set; }
 
     public string Description { get; set; }

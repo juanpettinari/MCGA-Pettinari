@@ -42,6 +42,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    
+
+                    @if (!User.Identity.IsAuthenticated){
                     <li id="mnuAbout">
                         <a class="page-scroll" href="@Url.Content("~/Home/Index#about")" onclick="navigatorMenu('About');">Sobre Nosotros</a>
                     </li>
@@ -54,8 +57,9 @@
                     <li id="mnuContact">
                         <a class="page-scroll" href="@Url.Content("~/Home/Index#contact")" onclick="navigatorMenu('Contact');">Contáctenos</a>
                     </li>
-
+                    }
                     @Html.Partial("_LoginPartial")
+                    
                 
                 </ul>
             </div>

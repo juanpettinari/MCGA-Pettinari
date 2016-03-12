@@ -14,8 +14,9 @@ namespace MasVidaWebMVC
 
 using System;
     using System.Collections.Generic;
-    
-public partial class TransactionType
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class TransactionType
 {
 
     public TransactionType()
@@ -27,7 +28,7 @@ public partial class TransactionType
 
 
     public int TransactionTypeID { get; set; }
-
+        [Required]
     public string TransactionTypeName { get; set; }
 
     public string TransactionTypeDescription { get; set; }

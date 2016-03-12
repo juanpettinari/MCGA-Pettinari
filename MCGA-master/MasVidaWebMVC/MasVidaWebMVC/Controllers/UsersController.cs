@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MasVidaWebMVC.Common;
+using MasVidaWebMVC.Filters;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using MasVidaWebMVC.Common;
-using MasVidaWebMVC.Filters;
 
 namespace MasVidaWebMVC.Controllers
 {
@@ -44,7 +41,7 @@ namespace MasVidaWebMVC.Controllers
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View("Details",user);
         }
 
         //
@@ -66,7 +63,8 @@ namespace MasVidaWebMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.UserPassword = PasswordHash.CreateHash(user.UserPassword);
+                if (user.UserPassword == null) { user.UserPassword = PasswordHash.CreateHash(user.UserPassword); }
+                
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");

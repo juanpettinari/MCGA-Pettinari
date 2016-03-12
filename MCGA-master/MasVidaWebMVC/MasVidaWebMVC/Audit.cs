@@ -19,7 +19,7 @@ public partial class Audit
 {
 
     public int AuditID { get; set; }
-
+        
     public string AuditDescription { get; set; }
 
     public Nullable<int> UserID { get; set; }

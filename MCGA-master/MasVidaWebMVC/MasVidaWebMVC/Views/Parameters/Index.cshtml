@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.ParameterValue)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ParameterID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ParameterID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ParameterID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ParameterID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Details", "Details", new { id=item.ParameterID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.ParameterID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

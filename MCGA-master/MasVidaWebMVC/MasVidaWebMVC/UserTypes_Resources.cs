@@ -11,8 +11,8 @@
 
 namespace MasVidaWebMVC
 {
-
-using System;
+    using System.ComponentModel.DataAnnotations;
+    using System;
     using System.Collections.Generic;
     
 public partial class UserTypes_Resources
@@ -21,7 +21,7 @@ public partial class UserTypes_Resources
     public int UserTypeID { get; set; }
 
     public int ControllerID { get; set; }
-
+        
     public bool Permit { get; set; }
 
 
