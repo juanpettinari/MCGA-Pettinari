@@ -32,11 +32,6 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Transaction" EntitySet="Transactions" />
     </AssociationSet>
-    <EntitySet Name="Audits" EntityType="MasVidaWebMVC.DataModels.Audit" />
-    <AssociationSet Name="FK_Audits_Users" Association="MasVidaWebMVC.DataModels.FK_Audits_Users">
-      <End Role="User" EntitySet="Users" />
-      <End Role="Audit" EntitySet="Audits" />
-    </AssociationSet>
     <EntitySet Name="sysdiagrams" EntityType="MasVidaWebMVC.DataModels.sysdiagram" />
     <EntitySet Name="Resources" EntityType="MasVidaWebMVC.DataModels.Resource" />
     <EntitySet Name="UserTypes_Resources" EntityType="MasVidaWebMVC.DataModels.UserTypes_Resources" />
@@ -48,6 +43,7 @@
       <End Role="UserType" EntitySet="UsersTypes" />
       <End Role="UserTypes_Resources" EntitySet="UserTypes_Resources" />
     </AssociationSet>
+    <EntitySet Name="Audits" EntityType="MasVidaWebMVC.DataModels.Audit" />
   </EntityContainer>
   <EntityType Name="FamilyGroup">
     <Key>
@@ -129,7 +125,6 @@
     <Property Type="Int32" Name="LastTransactionID" />
     <Property Type="Double" Name="AccountTotal" />
     <NavigationProperty Name="Transactions" Relationship="MasVidaWebMVC.DataModels.FK_Transactions_Users" FromRole="User" ToRole="Transaction" />
-    <NavigationProperty Name="Audits" Relationship="MasVidaWebMVC.DataModels.FK_Audits_Users" FromRole="User" ToRole="Audit" />
   </EntityType>
   <EntityType Name="UserType">
     <Key>
@@ -213,28 +208,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="Audit">
-    <Key>
-      <PropertyRef Name="AuditID" />
-    </Key>
-    <Property Type="Int32" Name="AuditID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="AuditDescription" MaxLength="250" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="UserID" />
-    <Property Type="DateTime" Name="AuditDateTime" Precision="3" />
-    <NavigationProperty Name="User" Relationship="MasVidaWebMVC.DataModels.FK_Audits_Users" FromRole="Audit" ToRole="User" />
-  </EntityType>
-  <Association Name="FK_Audits_Users">
-    <End Type="MasVidaWebMVC.DataModels.User" Role="User" Multiplicity="0..1" />
-    <End Type="MasVidaWebMVC.DataModels.Audit" Role="Audit" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="UserID" />
-      </Principal>
-      <Dependent Role="Audit">
-        <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -288,4 +261,16 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Audit">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedElement1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedElement2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateTimeLog" Type="DateTime" Precision="3" />
+  </EntityType>
 </Schema>

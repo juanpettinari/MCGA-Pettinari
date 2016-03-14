@@ -46,13 +46,13 @@ public partial class MasVidaDataContext : DbContext
 
     public DbSet<UserType> UsersTypes { get; set; }
 
-    public DbSet<Audit> Audits { get; set; }
-
     public DbSet<sysdiagram> sysdiagrams { get; set; }
 
     public DbSet<Resource> Resources { get; set; }
 
     public DbSet<UserTypes_Resources> UserTypes_Resources { get; set; }
+
+    public DbSet<Audit> Audits { get; set; }
 
 }
 

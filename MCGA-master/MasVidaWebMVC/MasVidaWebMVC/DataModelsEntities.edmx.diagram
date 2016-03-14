@@ -18,13 +18,12 @@
         <AssociationConnector Association="MasVidaWebMVC.DataModels.FK_Transactions_TransactionsTypes" ManuallyRouted="false" />
         <AssociationConnector Association="MasVidaWebMVC.DataModels.FK_Users_UsersTypes" ManuallyRouted="false" />
         <AssociationConnector Association="MasVidaWebMVC.DataModels.FK_Transactions_Users" />
-        <EntityTypeShape EntityType="MasVidaWebMVC.DataModels.Audit" Width="1.5" PointX="9.625" PointY="2.75" />
-        <AssociationConnector Association="MasVidaWebMVC.DataModels.FK_Audits_Users" />
         <EntityTypeShape EntityType="MasVidaWebMVC.DataModels.sysdiagram" Width="1.5" PointX="4.875" PointY="7" />
         <EntityTypeShape EntityType="MasVidaWebMVC.DataModels.Resource" Width="1.5" PointX="7.625" PointY="7.5" />
         <EntityTypeShape EntityType="MasVidaWebMVC.DataModels.UserTypes_Resources" Width="1.5" PointX="9.625" PointY="6.25" />
         <AssociationConnector Association="MasVidaWebMVC.DataModels.FK_UserTypes_Controllers_Controller" />
         <AssociationConnector Association="MasVidaWebMVC.DataModels.FK_UserTypes_Controllers_UsersTypes" />
+        <EntityTypeShape EntityType="MasVidaWebMVC.DataModels.Audit" Width="1.5" PointX="2.625" PointY="6.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

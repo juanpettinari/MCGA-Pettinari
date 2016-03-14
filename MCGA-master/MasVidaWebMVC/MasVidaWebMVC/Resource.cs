@@ -12,10 +12,9 @@
 namespace MasVidaWebMVC
 {
 
-using System;
+    using System;
     using System.ComponentModel.DataAnnotations;
     using System.Collections.Generic;
-
     
 public partial class Resource
 {

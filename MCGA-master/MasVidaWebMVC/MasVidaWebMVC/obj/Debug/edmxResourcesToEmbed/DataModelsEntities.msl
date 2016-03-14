@@ -86,16 +86,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Audits">
-      <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.Audit">
-        <MappingFragment StoreEntitySet="Audits">
-          <ScalarProperty Name="AuditDateTime" ColumnName="AuditDateTime" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="AuditDescription" ColumnName="AuditDescription" />
-          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -121,6 +111,19 @@
           <ScalarProperty Name="Permit" ColumnName="Permit" />
           <ScalarProperty Name="ControllerID" ColumnName="ControllerID" />
           <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audits">
+      <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.Audit">
+        <MappingFragment StoreEntitySet="Audits">
+          <ScalarProperty Name="DateTimeLog" ColumnName="DateTimeLog" />
+          <ScalarProperty Name="ModifiedElement2" ColumnName="ModifiedElement2" />
+          <ScalarProperty Name="ModifiedElement1" ColumnName="ModifiedElement1" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,0 +1,96 @@
+﻿@model IEnumerable<MasVidaWebMVC.Audit>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<br />
+<h2>Auditoría</h2>
+
+@using (Html.BeginForm("Index", "Auditoria", FormMethod.Get))
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Usuario
+            </th>
+            <th>
+                Recurso
+            </th>
+            <th>
+                Acción
+            </th>
+            <th>
+                Fecha Desde
+            </th>
+            <th>
+                Fecha Hasta
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DropDownList("ddUserName", null, "", new { @onchange = "this.form.submit();" })
+            </td>
+            <td>
+                @Html.DropDownList("ddResourceName",null, "", new { @onchange = "this.form.submit();" })
+            </td>
+            <td>
+                @Html.DropDownList("ddActionName",null, "", new { @onchange = "this.form.submit();" })
+            </td>
+            <td>
+                <input type="date" name="fechaDesde" onchange="this.form.submit();"/>
+            </td>
+            <td>
+                <input type="date" name="fechaHasta" />
+            </td>
+        </tr>
+    </table>
+}
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Usuario
+        </th>
+        <th>
+            Recurso
+        </th>
+        <th>
+            Acción
+        </th>
+        <th>
+            Elemento Modificado 1
+        </th>
+        <th>
+            Elemento Modificado 2
+        </th>
+        <th>
+            Dia y Hora
+        </th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResourceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedElement1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedElement2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeLog)
+            </td>
+        </tr>
+    }
+
+</table>

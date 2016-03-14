@@ -21,7 +21,7 @@ namespace MasVidaWebMVC.Filters
                 if (user2 != null)
                 {
                     var ut_r = db.UserTypes_Resources.Find(user2.UserType.UserTypeID, r.ControllerID);
-                    if (ut_r.Permit)
+                    if (ut_r.Permit == true)
                     {
                         return true;
                     }

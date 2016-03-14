@@ -19,16 +19,18 @@ public partial class Audit
 {
 
     public int AuditID { get; set; }
-        
-    public string AuditDescription { get; set; }
 
-    public Nullable<int> UserID { get; set; }
+    public string UserName { get; set; }
 
-    public Nullable<System.DateTime> AuditDateTime { get; set; }
+    public string ResourceName { get; set; }
 
+    public string ActionName { get; set; }
 
+    public string ModifiedElement1 { get; set; }
 
-    public virtual User User { get; set; }
+    public string ModifiedElement2 { get; set; }
+
+    public Nullable<System.DateTime> DateTimeLog { get; set; }
 
 }
 

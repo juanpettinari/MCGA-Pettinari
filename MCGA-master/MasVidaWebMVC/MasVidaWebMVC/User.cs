@@ -13,9 +13,10 @@ namespace MasVidaWebMVC
 {
 
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class User
+    using System.Collections.Generic;
+    
+public partial class User
 {
 
     public User()
@@ -23,11 +24,9 @@ namespace MasVidaWebMVC
 
         this.Transactions = new HashSet<Transaction>();
 
-        this.Audits = new HashSet<Audit>();
-
     }
 
-        [Required]
+
     public int UserID { get; set; }
         [Required]
     public string Name { get; set; }
@@ -43,6 +42,7 @@ namespace MasVidaWebMVC
     public string Phone { get; set; }
         [DataType(DataType.Date)]
     public Nullable<System.DateTime> Birthday { get; set; }
+
     public string UserName { get; set; }
         [DataType(DataType.Password)]
     public string UserPassword { get; set; }
@@ -70,8 +70,6 @@ namespace MasVidaWebMVC
     public virtual UserType UserType { get; set; }
 
     public virtual ICollection<Transaction> Transactions { get; set; }
-
-    public virtual ICollection<Audit> Audits { get; set; }
 
 }
 

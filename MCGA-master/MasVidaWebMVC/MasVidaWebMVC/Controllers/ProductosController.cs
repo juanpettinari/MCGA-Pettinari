@@ -48,6 +48,7 @@ namespace MasVidaWebMVC.Controllers
             {
                 db.Products.Add(product);
                 db.SaveChanges();
+                AuditoriaController.AuditoriaAltaProducto(User.Identity.Name, product);
                 return RedirectToAction("Index");
             }
 
@@ -77,6 +78,7 @@ namespace MasVidaWebMVC.Controllers
             {
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
+                AuditoriaController.AuditoriaModificacionProducto(User.Identity.Name, product);
                 return RedirectToAction("Index");
             }
             return View(product);
@@ -104,6 +106,7 @@ namespace MasVidaWebMVC.Controllers
             Product product = db.Products.Find(id);
             db.Products.Remove(product);
             db.SaveChanges();
+            AuditoriaController.AuditoriaBajaProducto(User.Identity.Name, product);
             return RedirectToAction("Index");
         }
 

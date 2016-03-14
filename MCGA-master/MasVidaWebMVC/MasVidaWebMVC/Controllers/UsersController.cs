@@ -63,10 +63,12 @@ namespace MasVidaWebMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (user.UserPassword == null) { user.UserPassword = PasswordHash.CreateHash(user.UserPassword); }
+                if (user.UserPassword != null)
+                { user.UserPassword = PasswordHash.CreateHash(user.UserPassword); }
                 
                 db.Users.Add(user);
                 db.SaveChanges();
+                AuditoriaController.AuditoriaAltaUsuario(User.Identity.Name, user);
                 return RedirectToAction("Index");
             }
 
@@ -102,6 +104,7 @@ namespace MasVidaWebMVC.Controllers
             {
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
+                AuditoriaController.AuditoriaModificacionUsuario(User.Identity.Name, user);
                 return RedirectToAction("Index");
             }
             ViewBag.FamilyGroupID = new SelectList(db.FamiliesGroups, "FamilyGroupID", "FamilyName", user.FamilyGroupID);
@@ -129,6 +132,7 @@ namespace MasVidaWebMVC.Controllers
                 user.UserPassword = PasswordHash.CreateHash(user.UserPassword);
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
+                AuditoriaController.AuditoriaCambiarContraseñaUsuario(User.Identity.Name, user);
                 return RedirectToAction("Index");
             }
             return View(user);
@@ -156,6 +160,7 @@ namespace MasVidaWebMVC.Controllers
             User user = db.Users.Find(id);
             db.Users.Remove(user);
             db.SaveChanges();
+            AuditoriaController.AuditoriaBajaUsuario(User.Identity.Name, user);
             return RedirectToAction("Index");
         }
 

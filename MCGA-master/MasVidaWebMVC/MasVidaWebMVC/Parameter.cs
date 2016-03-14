@@ -11,8 +11,12 @@
 
 namespace MasVidaWebMVC
 {
+
+    using System;
     using System.ComponentModel.DataAnnotations;
-    public partial class Parameter
+    using System.Collections.Generic;
+    
+public partial class Parameter
 {
 
     public int ParameterID { get; set; }

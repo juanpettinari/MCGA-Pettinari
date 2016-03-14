@@ -61,6 +61,7 @@ namespace MasVidaWebMVC.Controllers
                 }
                 db.UsersTypes.Add(usertype);
                 db.SaveChanges();
+                AuditoriaController.AuditoriaAltaUsertype(User.Identity.Name, usertype);
                 return RedirectToAction("Index");
             }
 
@@ -90,6 +91,7 @@ namespace MasVidaWebMVC.Controllers
             {
                 db.Entry(usertype).State = EntityState.Modified;
                 db.SaveChanges();
+                AuditoriaController.AuditoriaModificacionUsertype(User.Identity.Name, usertype);
                 return RedirectToAction("Index");
             }
             return View(usertype);
@@ -124,6 +126,7 @@ namespace MasVidaWebMVC.Controllers
             }
             db.UsersTypes.Remove(usertype);
             db.SaveChanges();
+            AuditoriaController.AuditoriaBajaUsertype(User.Identity.Name, usertype);
             return RedirectToAction("Index");
         }
 

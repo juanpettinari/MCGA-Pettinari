@@ -64,6 +64,7 @@ namespace MasVidaWebMVC.Controllers
                 }
                 db.Resources.Add(resource);
                 db.SaveChanges();
+                AuditoriaController.AuditoriaAltaRecurso(User.Identity.Name, resource);
                 return RedirectToAction("Index");
             }
 
@@ -94,6 +95,7 @@ namespace MasVidaWebMVC.Controllers
             {
                 db.Entry(resource).State = EntityState.Modified;
                 db.SaveChanges();
+                AuditoriaController.AuditoriaModificacionRecurso(User.Identity.Name, resource);
                 return RedirectToAction("Index");
             }
             return View(resource);
@@ -129,6 +131,7 @@ namespace MasVidaWebMVC.Controllers
             }
             db.Resources.Remove(resource);
             db.SaveChanges();
+            AuditoriaController.AuditoriaBajaRecurso(User.Identity.Name, resource);
             return RedirectToAction("Index");
         }
 

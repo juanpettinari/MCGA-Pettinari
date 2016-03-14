@@ -8,6 +8,7 @@ namespace MasVidaWebMVC.Controllers
         // GET: /Error/
         public ActionResult Unauthorized()
         {
+            AuditoriaController.AuditoriaNoAutorizadoError(User.Identity.Name);
             return View();
         }
 

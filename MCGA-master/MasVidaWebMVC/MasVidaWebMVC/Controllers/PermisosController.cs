@@ -75,6 +75,7 @@ namespace MasVidaWebMVC.Controllers
             }
             db.Entry(usertypes_resources).State = EntityState.Modified;
             db.SaveChanges();
+            AuditoriaController.AuditoriaModificarPermiso(User.Identity.Name, usertypes_resources);
             return RedirectToAction("Index");
         }
 

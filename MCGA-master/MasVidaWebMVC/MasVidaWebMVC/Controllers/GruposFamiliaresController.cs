@@ -48,6 +48,7 @@ namespace MasVidaWebMVC.Controllers
             {
                 db.FamiliesGroups.Add(familygroup);
                 db.SaveChanges();
+                AuditoriaController.AuditoriaAltaGrupoFamiliar(User.Identity.Name, familygroup);
                 return RedirectToAction("Index");
             }
 
@@ -77,6 +78,7 @@ namespace MasVidaWebMVC.Controllers
             {
                 db.Entry(familygroup).State = EntityState.Modified;
                 db.SaveChanges();
+                AuditoriaController.AuditoriaModificacionGrupoFamiliar(User.Identity.Name, familygroup);
                 return RedirectToAction("Index");
             }
             return View(familygroup);
@@ -104,6 +106,7 @@ namespace MasVidaWebMVC.Controllers
             FamilyGroup familygroup = db.FamiliesGroups.Find(id);
             db.FamiliesGroups.Remove(familygroup);
             db.SaveChanges();
+            AuditoriaController.AuditoriaBajaGrupoFamiliar(User.Identity.Name, familygroup);
             return RedirectToAction("Index");
         }
 

@@ -10,9 +10,12 @@
             <PropertyRef Name="AuditID" />
           </Key>
           <Property Name="AuditID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AuditDescription" Type="varchar" MaxLength="250" />
-          <Property Name="UserID" Type="int" />
-          <Property Name="AuditDateTime" Type="datetime" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ResourceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ActionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModifiedElement1" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedElement2" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateTimeLog" Type="datetime" />
         </EntityType>
         <EntityType Name="FamiliesGroups">
           <Key>
@@ -118,18 +121,6 @@
           <Property Name="ControllerID" Type="int" Nullable="false" />
           <Property Name="Permit" Type="bit" />
         </EntityType>
-        <Association Name="FK_Audits_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="Audits" Type="Self.Audits" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserID" />
-            </Principal>
-            <Dependent Role="Audits">
-              <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Transactions_Products">
           <End Role="Products" Type="Self.Products" Multiplicity="1" />
           <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
@@ -214,10 +205,6 @@
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UsersTypes" EntityType="Self.UsersTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserTypes_Resources" EntityType="Self.UserTypes_Resources" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Audits_Users" Association="Self.FK_Audits_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Audits" EntitySet="Audits" />
-          </AssociationSet>
           <AssociationSet Name="FK_Transactions_Products" Association="Self.FK_Transactions_Products">
             <End Role="Products" EntitySet="Products" />
             <End Role="Transactions" EntitySet="Transactions" />
@@ -279,11 +266,6 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
-          <EntitySet Name="Audits" EntityType="MasVidaWebMVC.DataModels.Audit" />
-          <AssociationSet Name="FK_Audits_Users" Association="MasVidaWebMVC.DataModels.FK_Audits_Users">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Audit" EntitySet="Audits" />
-          </AssociationSet>
           <EntitySet Name="sysdiagrams" EntityType="MasVidaWebMVC.DataModels.sysdiagram" />
           <EntitySet Name="Resources" EntityType="MasVidaWebMVC.DataModels.Resource" />
           <EntitySet Name="UserTypes_Resources" EntityType="MasVidaWebMVC.DataModels.UserTypes_Resources" />
@@ -295,6 +277,7 @@
             <End Role="UserType" EntitySet="UsersTypes" />
             <End Role="UserTypes_Resources" EntitySet="UserTypes_Resources" />
           </AssociationSet>
+          <EntitySet Name="Audits" EntityType="MasVidaWebMVC.DataModels.Audit" />
         </EntityContainer>
         <EntityType Name="FamilyGroup">
           <Key>
@@ -376,7 +359,6 @@
           <Property Type="Int32" Name="LastTransactionID" />
           <Property Type="Double" Name="AccountTotal" />
           <NavigationProperty Name="Transactions" Relationship="MasVidaWebMVC.DataModels.FK_Transactions_Users" FromRole="User" ToRole="Transaction" />
-          <NavigationProperty Name="Audits" Relationship="MasVidaWebMVC.DataModels.FK_Audits_Users" FromRole="User" ToRole="Audit" />
         </EntityType>
         <EntityType Name="UserType">
           <Key>
@@ -460,28 +442,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Audit">
-          <Key>
-            <PropertyRef Name="AuditID" />
-          </Key>
-          <Property Type="Int32" Name="AuditID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="AuditDescription" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="UserID" />
-          <Property Type="DateTime" Name="AuditDateTime" Precision="3" />
-          <NavigationProperty Name="User" Relationship="MasVidaWebMVC.DataModels.FK_Audits_Users" FromRole="Audit" ToRole="User" />
-        </EntityType>
-        <Association Name="FK_Audits_Users">
-          <End Type="MasVidaWebMVC.DataModels.User" Role="User" Multiplicity="0..1" />
-          <End Type="MasVidaWebMVC.DataModels.Audit" Role="Audit" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="UserID" />
-            </Principal>
-            <Dependent Role="Audit">
-              <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -535,6 +495,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Audit">
+          <Key>
+            <PropertyRef Name="AuditID" />
+          </Key>
+          <Property Name="AuditID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedElement1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedElement2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateTimeLog" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -626,16 +598,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Audits">
-            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.Audit">
-              <MappingFragment StoreEntitySet="Audits">
-                <ScalarProperty Name="AuditDateTime" ColumnName="AuditDateTime" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="AuditDescription" ColumnName="AuditDescription" />
-                <ScalarProperty Name="AuditID" ColumnName="AuditID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -661,6 +623,19 @@
                 <ScalarProperty Name="Permit" ColumnName="Permit" />
                 <ScalarProperty Name="ControllerID" ColumnName="ControllerID" />
                 <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Audits">
+            <EntityTypeMapping TypeName="MasVidaWebMVC.DataModels.Audit">
+              <MappingFragment StoreEntitySet="Audits">
+                <ScalarProperty Name="DateTimeLog" ColumnName="DateTimeLog" />
+                <ScalarProperty Name="ModifiedElement2" ColumnName="ModifiedElement2" />
+                <ScalarProperty Name="ModifiedElement1" ColumnName="ModifiedElement1" />
+                <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+                <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AuditID" ColumnName="AuditID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

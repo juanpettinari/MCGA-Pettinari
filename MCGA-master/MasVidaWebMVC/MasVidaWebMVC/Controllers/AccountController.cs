@@ -45,7 +45,7 @@ namespace MasVidaWebMVC.Controllers
                     }
                     else { 
                         FormsAuthentication.SetAuthCookie(model.UserName, false);
-
+                        AuditoriaController.AuditoriaLogIn(myUser);
                         //FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1,
                         //    "UserInfo",
                         //    DateTime.Now,
@@ -85,6 +85,7 @@ namespace MasVidaWebMVC.Controllers
         // POST: /Account/LogOut
         public ActionResult LogOut()
         {
+            AuditoriaController.AuditoriaLogOut(User.Identity.Name);
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }

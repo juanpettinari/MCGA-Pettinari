@@ -11,11 +11,11 @@
 
 namespace MasVidaWebMVC
 {
+
     using System;
     using System.ComponentModel.DataAnnotations;
-
-
-    public partial class Transaction
+    
+public partial class Transaction
 {
 
     public int TransactionID { get; set; }
@@ -33,7 +33,7 @@ namespace MasVidaWebMVC
     public int TransactionTypeID { get; set; }
 
     public int ProductID { get; set; }
-        
+
     public int UserID { get; set; }
 
 

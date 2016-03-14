@@ -12,11 +12,11 @@
 namespace MasVidaWebMVC
 {
 
-using System;
-    using System.Collections.Generic;
+    using System;
     using System.ComponentModel.DataAnnotations;
-
-    public partial class Product
+    using System.Collections.Generic;
+    
+public partial class Product
 {
 
     public Product()
