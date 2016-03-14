@@ -15,19 +15,17 @@
         @Html.HiddenFor(model => model.FamilyGroupID)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FamilyName)
+            @Html.LabelFor(model => model.FamilyName,"Familia")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.FamilyName)
             @Html.ValidationMessageFor(model => model.FamilyName)
         </div>
 
+        <br />
         <p>
             <input type="submit" value="Guardar" class="btn btn-success" />
+            | @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
         </p>
     </fieldset>
 }
-
-<div>
-    @Html.ActionLink("Volver", "Index")
-</div>

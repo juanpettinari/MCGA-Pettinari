@@ -10,10 +10,10 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>TransactionType</legend>
+        <legend>Tipo de Transacción</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TransactionTypeName)
+            @Html.LabelFor(model => model.TransactionTypeName,"Tipo de Transacción")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TransactionTypeName)
@@ -21,7 +21,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TransactionTypeDescription)
+            @Html.LabelFor(model => model.TransactionTypeDescription,"Descripción de la Transaccion")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TransactionTypeDescription)
@@ -29,14 +29,12 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" class="btn btn-success"/>
+            <input type="submit" value="Crear" class="btn btn-success" />
+            | @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

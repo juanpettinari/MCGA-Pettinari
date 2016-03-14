@@ -30,15 +30,15 @@
             @Html.ValidationMessageFor(model => model.TransactionTypeDescription)
         </div>
 
+        <br />
         <p>
-            <input type="submit" value="Save" class="btn btn-success"/>
+            <input type="submit" value="Guardar" class="btn btn-success" />
+            | @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

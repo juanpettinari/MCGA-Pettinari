@@ -7,23 +7,17 @@
 <h2>Details</h2>
 
 <fieldset>
-    <legend>Resource</legend>
+    <legend>Recurso</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ControllerID)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ControllerID)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ControllerName)
+        <strong>Nombre del Recurso</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ControllerName)
     </div>
 </fieldset>
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ControllerID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ControllerID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
 </p>

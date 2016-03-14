@@ -4,92 +4,92 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
 <h3>Esta seguro que desea eliminar el cliente?</h3>
 <p>Se eliminaran todas las transacciones realizadas y la cuenta del mismo.</p>
 <fieldset>
-    <legend>User</legend>
+    <legend>Usuario</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Name)
+        <strong>Nombre</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Name)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LastName)
+         <strong>Apellido</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.LastName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.DNI)
+        <strong>@Html.DisplayNameFor(model => model.DNI)</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DNI)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Address)
+         <strong>Dirección</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Address)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Email)
+         <strong>@Html.DisplayNameFor(model => model.Email)</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Email)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Phone)
+        <strong>Teléfono</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Phone)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Product.ProductName)
+         <strong>Producto</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Product.ProductName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsActive)
+        <strong>Activo</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.IsActive)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.UserType.UserTypeName)
+         <strong>Tipo de Usuario</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.UserType.UserTypeName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.FamiliesGroup.FamilyName)
+         <strong>Groupo Familiar</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.FamiliesGroup.FamilyName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.CreationDateTime)
+         <strong>Fecha de Cración</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.CreationDateTime)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.AccountTotal)
+        <strong>Saldo</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.AccountTotal)
@@ -97,7 +97,8 @@
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
+        <br />
         <input type="submit" value="Delete" class="btn btn-danger"/> |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Volver", "Index",null,new { @class="btn btn-primary"})
     </p>
 }

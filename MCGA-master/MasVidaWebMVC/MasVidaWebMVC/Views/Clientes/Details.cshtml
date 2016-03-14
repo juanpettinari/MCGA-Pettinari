@@ -43,9 +43,10 @@
          @Html.DisplayNameFor(model => model.AccountTotal): $@Html.DisplayFor(model => model.AccountTotal)
     </div>
 </fieldset>
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.UserID })
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.UserID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
 </p>
 @if (Model.Transactions.Count > 0)
 {

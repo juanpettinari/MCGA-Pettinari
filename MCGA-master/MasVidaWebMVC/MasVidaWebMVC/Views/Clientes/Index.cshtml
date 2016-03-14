@@ -10,7 +10,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Nuevo", "Create")
+    @Html.ActionLink("Nuevo", "Create", null, new { @class = "btn btn-primary" })
 </p>
 
 @using (Html.BeginForm("Index", "Clientes", FormMethod.Get))
@@ -89,6 +89,6 @@
 </table>
 
 <br />
-Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-@Html.PagedListPager( Model, page => Url.Action("Index", new { page, currentFilter=ViewBag.CurrentFilter }) )
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page}) )

@@ -4,29 +4,30 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<h2>Eliminar</h2>
+<h3>¿Está seguro que quiere eliminar esto?</h3>
 <fieldset>
-    <legend>Parameter</legend>
+    <legend>Parámetro</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ParameterName)
+        <strong>Nombre del Parámetro</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ParameterName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ParameterValue)
+        <strong>Valor del Parámetro</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ParameterValue)
     </div>
 </fieldset>
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     <p>
-        <input type="submit" value="Delete" class="btn btn-danger"/> |
-        @Html.ActionLink("Back to List", "Index")
+        <br />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
     </p>
 }

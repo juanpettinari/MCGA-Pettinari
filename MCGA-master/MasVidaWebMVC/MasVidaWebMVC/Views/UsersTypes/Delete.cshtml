@@ -4,14 +4,14 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Está seguro que quiere eliminar esto?</h3>
 <fieldset>
-    <legend>UserType</legend>
+    <legend>Tipo de Usuario</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.UserTypeName)
+        <strong>Tipo de Usuario</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.UserTypeName)
@@ -19,7 +19,8 @@
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" class="btn btn-danger"/> |
-        @Html.ActionLink("Back to List", "Index")
+        <br />
+        <input type="submit" value="Eliminar" class="btn btn-danger"/> |
+        @Html.ActionLink("Volver", "Index",null,new { @class="btn btn-primary"})
     </p>
 }

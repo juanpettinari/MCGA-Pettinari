@@ -10,10 +10,10 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Transaction</legend>
+        <legend>Transacción</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ProductName)
+            @Html.LabelFor(model => model.ProductName,"Nombre de Producto")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.ProductName)
@@ -21,7 +21,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ProductPrice)
+            @Html.LabelFor(model => model.ProductPrice,"Precio de Producto")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.ProductPrice)
@@ -29,7 +29,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TransactionCreationDate)
+            @Html.LabelFor(model => model.TransactionCreationDate, "Fecha de Creación de Transacción")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TransactionCreationDate)
@@ -37,7 +37,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TransactionPaymentDate)
+            @Html.LabelFor(model => model.TransactionPaymentDate,"Fecha de Pago de Transacción")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TransactionPaymentDate)
@@ -45,7 +45,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.IsPaid)
+            @Html.LabelFor(model => model.IsPaid,"Pagado")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.IsPaid)
@@ -53,7 +53,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TransactionTypeID, "TransactionType")
+            @Html.LabelFor(model => model.TransactionTypeID, "Tipo de Transacción")
         </div>
         <div class="editor-field">
             @Html.DropDownList("TransactionTypeID", String.Empty)
@@ -61,7 +61,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ProductID, "Product")
+            @Html.LabelFor(model => model.ProductID, "Producto")
         </div>
         <div class="editor-field">
             @Html.DropDownList("ProductID", String.Empty)
@@ -69,22 +69,20 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserID, "Users")
+            @Html.LabelFor(model => model.UserID, "Usario")
         </div>
         <div class="editor-field">
             @Html.DropDownList("UserID", String.Empty)
             @Html.ValidationMessageFor(model => model.UserID)
         </div>
-
+        <br />
         <p>
-            <input type="submit" value="Create" class="btn btn-success"/>
+            <input type="submit" value="Crear" class="btn btn-success" />
+            | @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

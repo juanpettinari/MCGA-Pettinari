@@ -1,10 +1,10 @@
 ﻿@model MasVidaWebMVC.User
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar";
 }
 
-<h2>Edit</h2>
+<h2>Cliente</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -16,7 +16,7 @@
         @Html.HiddenFor(model => model.UserTypeID)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
+            @Html.LabelFor(model => model.Name, "Nombre")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Name)
@@ -24,7 +24,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LastName)
+            @Html.LabelFor(model => model.LastName, "Apellido")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.LastName)
@@ -40,7 +40,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Address)
+            @Html.LabelFor(model => model.Address, "Dirección")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Address)
@@ -56,7 +56,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Phone)
+            @Html.LabelFor(model => model.Phone,"Teléfono")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Phone)
@@ -64,7 +64,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Birthday)
+            @Html.LabelFor(model => model.Birthday,"Fecha de Nacimiento")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Birthday)
@@ -88,7 +88,7 @@
         </div>*@
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ProductID, "Product")
+            @Html.LabelFor(model => model.ProductID, "Producto")
         </div>
         <div class="editor-field">
             @Html.DropDownList("ProductID", String.Empty)
@@ -96,7 +96,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.IsActive)
+            @Html.LabelFor(model => model.IsActive, "Activo")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.IsActive)
@@ -120,7 +120,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CreationDateTime)
+            @Html.LabelFor(model => model.CreationDateTime,"Fecha de Creación")
         </div>
         <div class="editor-field">
             @Html.DisplayFor(model => model.CreationDateTime)
@@ -128,7 +128,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LastTransactionID)
+            @Html.LabelFor(model => model.LastTransactionID, "ID de la ultima transacción")
         </div>
         <div class="editor-field">
             @Html.DisplayFor(model => model.LastTransactionID)
@@ -136,22 +136,22 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.AccountTotal)
+            @Html.LabelFor(model => model.AccountTotal,"Saldo")
         </div>
         <div class="editor-field">
             @Html.DisplayFor(model => model.AccountTotal)
             @*@Html.ValidationMessageFor(model => model.AccountTotal)*@
         </div>
 
+        <br />
         <p>
-            <input type="submit" value="Guardar" class="btn btn-success"/>
+            <input type="submit" value="Guardar" class="btn btn-success" />
+            | @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Volver", "Index")
-</div>
+
 
 @*@section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -4,43 +4,45 @@
     ViewBag.Title = "Productos";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Estás seguro que quieres eliminar esto?</h3>
 <fieldset>
     <legend>Producto</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ProductName)
+        <strong>Producto</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ProductName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ProductDescription)
+        <strong>Descripción</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ProductDescription)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ProductPrice)
+        <strong>Precio</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ProductPrice)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsActive)
+        <strong>Activo</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.IsActive)
     </div>
 </fieldset>
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     <p>
-        <input type="submit" value="Eliminar" class="btn btn-danger" class="btn btn-danger"/> |
-        @Html.ActionLink("Volver", "Index")
+        <br />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
     </p>
 }

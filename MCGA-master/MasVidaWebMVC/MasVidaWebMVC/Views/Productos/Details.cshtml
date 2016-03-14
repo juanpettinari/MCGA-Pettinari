@@ -10,34 +10,35 @@
     <legend>Producto</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ProductName)
+         <strong>Producto</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ProductName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ProductDescription)
+         <strong>Descripción</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ProductDescription)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ProductPrice)
+         <strong>Precio</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ProductPrice)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsActive)
+         <strong>Activo</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.IsActive)
     </div>
 </fieldset>
+<br />
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id=Model.ProductID }) |
-    @Html.ActionLink("Volver", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
 </p>

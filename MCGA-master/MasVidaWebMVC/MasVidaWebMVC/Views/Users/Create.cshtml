@@ -10,66 +10,17 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>User</legend>
+        <legend>Usuario</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
+            @Html.LabelFor(model => model.UserTypeID, "Tipo de Usuario")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
+            @Html.DropDownList("UserTypeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserTypeID)
         </div>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.LastName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.LastName)
-            @Html.ValidationMessageFor(model => model.LastName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DNI)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DNI)
-            @Html.ValidationMessageFor(model => model.DNI)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Address)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Address)
-            @Html.ValidationMessageFor(model => model.Address)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Email)
-            @Html.ValidationMessageFor(model => model.Email)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Phone)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Phone)
-            @Html.ValidationMessageFor(model => model.Phone)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Birthday)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Birthday)
-            @Html.ValidationMessageFor(model => model.Birthday)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserName)
+            @Html.LabelFor(model => model.UserName, "Nombre de Usuario")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.UserName)
@@ -77,7 +28,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserPassword)
+            @Html.LabelFor(model => model.UserPassword, "Contraseña")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.UserPassword)
@@ -85,15 +36,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ProductID, "Product")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("ProductID", String.Empty)
-            @Html.ValidationMessageFor(model => model.ProductID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IsActive)
+            @Html.LabelFor(model => model.IsActive, "Activo")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.IsActive)
@@ -101,54 +44,68 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserTypeID, "UserType")
+            @Html.LabelFor(model => model.Name,"Nombre")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("UserTypeID", String.Empty)
-            @Html.ValidationMessageFor(model => model.UserTypeID)
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FamilyGroupID, "FamiliesGroup")
+            @Html.LabelFor(model => model.LastName,"Apellido")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("FamilyGroupID", String.Empty)
-            @Html.ValidationMessageFor(model => model.FamilyGroupID)
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DNI,"DNI")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DNI)
+            @Html.ValidationMessageFor(model => model.DNI)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CreationDateTime)
+            @Html.LabelFor(model => model.Address,"Dirección")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CreationDateTime)
-            @Html.ValidationMessageFor(model => model.CreationDateTime)
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LastTransactionID)
+            @Html.LabelFor(model => model.Email,"Email")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.LastTransactionID)
-            @Html.ValidationMessageFor(model => model.LastTransactionID)
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.AccountTotal)
+            @Html.LabelFor(model => model.Phone,"Teléfono")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.AccountTotal)
-            @Html.ValidationMessageFor(model => model.AccountTotal)
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Birthday,"Fecha de Nacimiento")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Birthday)
+            @Html.ValidationMessageFor(model => model.Birthday)
+        </div>
+
+        <br /> 
         <p>
-            <input type="submit" value="Create" class="btn btn-success"/>
+            <input type="submit" value="Crear" class="btn btn-success" />
+            | @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

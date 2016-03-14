@@ -10,13 +10,14 @@
     <legend>Grupo Familiar</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.FamilyName)
+         <strong>Familia</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.FamilyName)
     </div>
 </fieldset>
+<br />
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id=Model.FamilyGroupID }) |
-    @Html.ActionLink("Volver", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.FamilyGroupID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
 </p>

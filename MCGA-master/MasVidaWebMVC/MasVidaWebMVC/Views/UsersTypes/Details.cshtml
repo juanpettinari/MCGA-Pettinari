@@ -10,13 +10,14 @@
     <legend>UserType</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.UserTypeName)
+        <strong>Tipo de Usuario</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.UserTypeName)
     </div>
 </fieldset>
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.UserTypeID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.UserTypeID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
 </p>

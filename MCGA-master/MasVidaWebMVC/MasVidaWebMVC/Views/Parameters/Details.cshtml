@@ -10,20 +10,21 @@
     <legend>Parameter</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ParameterName)
+        <strong>Nombre de Parámetro</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ParameterName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ParameterValue)
+        <strong>Valor del Parámetro</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ParameterValue)
     </div>
 </fieldset>
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ParameterID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ParameterID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
 </p>

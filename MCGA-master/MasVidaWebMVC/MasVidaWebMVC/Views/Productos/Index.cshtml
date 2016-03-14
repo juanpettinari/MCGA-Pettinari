@@ -3,25 +3,24 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<h2>Producto</h2>
 
 <p>
-    @Html.ActionLink("Nuevo", "Create")
+    @Html.ActionLink("Nuevo", "Create", null, new { @class = "btn btn-primary" })
 </p>
 <table class="table table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ProductName)
+            Producto
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProductDescription)
+            Descripción
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProductPrice)
+            Precio
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IsActive)
+            Activo
         </th>
         <th>Herramientas</th>
     </tr>

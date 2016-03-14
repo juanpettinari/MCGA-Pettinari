@@ -7,15 +7,12 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo", "Create",null,new { @class= "btn btn-primary"})
 </p>
 <table class="table table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ControllerID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ControllerName)
+            Nombre de Recurso
         </th>
         <th></th>
     </tr>
@@ -23,15 +20,12 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ControllerID)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.ControllerName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ControllerID }, new { @class = "btn btn-success" })
-            @Html.ActionLink("Details", "Details", new { id = item.ControllerID }, new { @class = "btn btn-success" })
-            @Html.ActionLink("Delete", "Delete", new { id = item.ControllerID }, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Editar", "Edit", new { id = item.ControllerID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Detalles", "Details", new { id = item.ControllerID }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.ControllerID }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

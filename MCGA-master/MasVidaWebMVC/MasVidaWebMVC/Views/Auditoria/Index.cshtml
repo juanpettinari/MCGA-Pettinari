@@ -38,10 +38,13 @@
                 @Html.DropDownList("ddActionName",null, "", new { @onchange = "this.form.submit();" })
             </td>
             <td>
-                <input type="date" name="fechaDesde" onchange="this.form.submit();"/>
+                <input type="date" name="fechaDesde"/>
             </td>
             <td>
-                <input type="date" name="fechaHasta" />
+                <input type="date" name="fechaHasta"/>
+            </td>
+            <td>
+                <input type="submit" value="Filtrar" class="btn btn-default" />
             </td>
         </tr>
     </table>

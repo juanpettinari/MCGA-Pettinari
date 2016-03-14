@@ -4,22 +4,23 @@
     ViewBag.Title = "Grupos Familiares";
 }
 
-<h2>Delete</h2>
-
-<h3>Esta seguro que desea eliminar?</h3>
+<h2>Eliminar</h2>
+<h3>¿Está seguro que quiere eliminar esto?</h3>
 <fieldset>
     <legend>Grupo Familiar</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.FamilyName)
+        <strong>Familia</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.FamilyName)
     </div>
 </fieldset>
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     <p>
+        <br />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        @Html.ActionLink("Volver", "Index")
+        @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
     </p>
 }

@@ -7,23 +7,24 @@
 <h2>Details</h2>
 
 <fieldset>
-    <legend>TransactionType</legend>
+    <legend>Tipo de Transacción</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.TransactionTypeName)
+         <strong>Tipo de Transacción</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.TransactionTypeName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.TransactionTypeDescription)
+         <strong>Descripción</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.TransactionTypeDescription)
     </div>
 </fieldset>
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.TransactionTypeID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.TransactionTypeID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
 </p>

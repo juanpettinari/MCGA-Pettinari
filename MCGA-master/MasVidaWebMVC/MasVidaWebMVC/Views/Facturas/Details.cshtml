@@ -1,4 +1,4 @@
-﻿@model MasVidaWebMVC.Transaction
+﻿@*@model MasVidaWebMVC.Transaction
 
 @{
     ViewBag.Title = "Details";
@@ -10,49 +10,49 @@
     <legend>Transaction</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ProductName)
+        <strong>Nombre de Producto</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ProductName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.ProductPrice)
+        <strong>Precio de Producto</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.ProductPrice)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.TransactionCreationDate)
+         <strong>Fecha de Creación de la transacción</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.TransactionCreationDate)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.TransactionPaymentDate)
+        <strong>Fecha Pago Transacción</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.TransactionPaymentDate)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsPaid)
+        <strong>Pagado</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.IsPaid)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.TransactionType.TransactionTypeName)
+        <strong>Nombroducto</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.TransactionType.TransactionTypeName)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Product.ProductName)
+         <strong>Nombroducto</strong>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Product.ProductName)
@@ -65,7 +65,8 @@
         @Html.DisplayFor(model => model.Users.Name)
     </div>
 </fieldset>
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.TransactionID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.TransactionID }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-primary" })
+</p>*@
